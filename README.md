@@ -44,21 +44,25 @@ iOS & backend developer based in Moscow. I build mobile apps, automation tools, 
 macOS menu bar app that monitors active apps and windows, then uses Claude AI to categorize your focus sessions in real time.
 `Swift` `SwiftUI` `SwiftData` `Claude API` `Accessibility API`
 
+### [torgi-bot](https://github.com/ayeresell/torgi-bot) — government portal automation bot
+Telegram bot that automates application submissions on the Moscow Region government portal via Gosuslugi auth and headless browser.
+`TypeScript` `Node.js` `Playwright` `Telegraf`
+
+### [url-checker](https://github.com/ayeresell/url-checker) — concurrent URL checker
+High-performance URL mutation checker with goroutine-based concurrency, atomic counters, and real-time stats.
+`Go` `goroutines` `sync/atomic`
+
+### [restaurant-landing](https://github.com/ayeresell/restaurant-landing) — cinematic landing page
+Immersive restaurant landing page with custom cursor, preloader, scroll animations and full component architecture.
+`React` `TypeScript` `Tailwind CSS` `Vite`
+
+### [quantum-experiments](https://github.com/ayeresell/quantum-experiments) — quantum computing
+Grover's search algorithm and quantum random number generation on a real quantum cloud backend.
+`Python` `QPanda3` `Quantum Computing`
+
 ### Restock Monitor
 Python scripts that track limited-edition streetwear drops (Supreme, Nike, Adidas) in real time across 10+ websites.
 `Python` `Requests` `BeautifulSoup`
-
-### Crypto Wallet Bot
-Telegram bot that analyzes on-chain wallet activity and generates summary reports on transactions and balances.
-`Python` `Telegram Bot API` `Web3`
-
-### AI Chatbot (Telegram)
-Telegram bot with integrated neural network for natural language conversations.
-`Python` `Telegram Bot API` `LLM integration`
-
-### Go Telegram Bot
-Lightweight Telegram bot built in Go with real-time message processing and external API integration.
-`Go` `Telegram Bot API`
 
 ---
 
