@@ -3,10 +3,10 @@
     <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="1" fill="#21262d"/>
     </pattern>
-    <filter id="orbBlur" x="-60%" y="-60%" width="220%" height="220%">
+    <filter id="orbBlur">
       <feGaussianBlur stdDeviation="22"/>
     </filter>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="glow">
       <feGaussianBlur stdDeviation="2.5" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
@@ -15,71 +15,77 @@
     </clipPath>
     <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%"   stop-color="#2f81f7" stop-opacity="0"/>
-      <stop offset="25%"  stop-color="#2f81f7" stop-opacity="1"/>
-      <stop offset="75%"  stop-color="#3fb950" stop-opacity="1"/>
+      <stop offset="25%"  stop-color="#2f81f7"/>
+      <stop offset="75%"  stop-color="#3fb950"/>
       <stop offset="100%" stop-color="#3fb950" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
+  <style>
+    .orb1 { animation: drift1 9s ease-in-out infinite; transform-origin: 140px 75px; }
+    .orb2 { animation: drift2 11s ease-in-out infinite; transform-origin: 490px 35px; }
+    .orb3 { animation: drift3 10s ease-in-out infinite; transform-origin: 790px 105px; }
+
+    @keyframes drift1 {
+      0%,100% { transform: translate(0,0); }
+      50%     { transform: translate(22px,-20px); }
+    }
+    @keyframes drift2 {
+      0%,100% { transform: translate(0,0); }
+      50%     { transform: translate(-24px,36px); }
+    }
+    @keyframes drift3 {
+      0%,100% { transform: translate(0,0); }
+      50%     { transform: translate(-34px,-36px); }
+    }
+
+    .c1 { animation: f1 10s ease-in-out infinite; }
+    .c2 { animation: f2 10s ease-in-out infinite 2s; }
+    .c3 { animation: f3 10s ease-in-out infinite 1s; }
+    .c4 { animation: f4 10s ease-in-out infinite 3.5s; }
+    .c5 { animation: f5 10s ease-in-out infinite 5s; }
+
+    @keyframes f1 {
+      0%,8%   { opacity:0; transform:translateY(0); }
+      20%,70% { opacity:.75; transform:translateY(-16px); }
+      90%,100%{ opacity:0; transform:translateY(-30px); }
+    }
+    @keyframes f2 {
+      0%,8%   { opacity:0; transform:translateY(0); }
+      20%,70% { opacity:.75; transform:translateY(-16px); }
+      90%,100%{ opacity:0; transform:translateY(-30px); }
+    }
+    @keyframes f3 {
+      0%,8%   { opacity:0; transform:translateY(0); }
+      20%,70% { opacity:.75; transform:translateY(16px); }
+      90%,100%{ opacity:0; transform:translateY(30px); }
+    }
+    @keyframes f4 {
+      0%,8%   { opacity:0; transform:translateY(0); }
+      20%,70% { opacity:.75; transform:translateY(-16px); }
+      90%,100%{ opacity:0; transform:translateY(-30px); }
+    }
+    @keyframes f5 {
+      0%,8%   { opacity:0; transform:translateY(0); }
+      20%,70% { opacity:.75; transform:translateY(16px); }
+      90%,100%{ opacity:0; transform:translateY(30px); }
+    }
+  </style>
+
   <g clip-path="url(#clip)">
-    <!-- Background -->
     <rect width="900" height="160" fill="#0d1117"/>
     <rect width="900" height="160" fill="url(#dots)" opacity="0.6"/>
 
-    <!-- Orb: Swift/blue -->
-    <circle cx="140" cy="75" r="110" fill="#2f81f7" opacity="0.13" filter="url(#orbBlur)">
-      <animate attributeName="cx" values="140;165;140" dur="9s"  repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
-      <animate attributeName="cy" values="75;55;75"   dur="9s"  repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
-    </circle>
+    <circle class="orb1" cx="140" cy="75"  r="110" fill="#2f81f7" opacity="0.13" filter="url(#orbBlur)"/>
+    <circle class="orb2" cx="490" cy="35"  r="90"  fill="#f0883e" opacity="0.11" filter="url(#orbBlur)"/>
+    <circle class="orb3" cx="790" cy="105" r="100" fill="#3fb950" opacity="0.12" filter="url(#orbBlur)"/>
 
-    <!-- Orb: Python/orange -->
-    <circle cx="490" cy="35" r="90"  fill="#f0883e" opacity="0.11" filter="url(#orbBlur)">
-      <animate attributeName="cx" values="490;465;490" dur="11s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="35;72;35"    dur="11s" repeatCount="indefinite"/>
-    </circle>
+    <text class="c1" x="60"  y="95"  font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#58a6ff"  filter="url(#glow)" opacity="0">import SwiftUI</text>
+    <text class="c2" x="240" y="115" font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#d2a8ff"  filter="url(#glow)" opacity="0">@Observable</text>
+    <text class="c3" x="430" y="55"  font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#3fb950"  filter="url(#glow)" opacity="0">func main() {}</text>
+    <text class="c4" x="640" y="100" font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#39d353"  filter="url(#glow)" opacity="0">go routine()</text>
+    <text class="c5" x="760" y="50"  font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#f0883e"  filter="url(#glow)" opacity="0">struct Model</text>
 
-    <!-- Orb: Go/green -->
-    <circle cx="790" cy="105" r="100" fill="#3fb950" opacity="0.12" filter="url(#orbBlur)">
-      <animate attributeName="cx" values="790;755;790" dur="10s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="105;68;105"  dur="10s" repeatCount="indefinite"/>
-    </circle>
-
-    <!-- Floating code: import SwiftUI -->
-    <text font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#58a6ff" filter="url(#glow)" opacity="0">
-      <tspan x="60" dy="0">import SwiftUI</tspan>
-      <animate attributeName="opacity" values="0;0;0.75;0.75;0" keyTimes="0;0.05;0.2;0.75;1" dur="10s" begin="0s"  repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate" values="0,95; 0,95; 0,80; 0,65; 0,65" keyTimes="0;0.05;0.2;0.75;1" dur="10s" begin="0s" repeatCount="indefinite"/>
-    </text>
-
-    <!-- Floating code: @Observable -->
-    <text font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#d2a8ff" filter="url(#glow)" opacity="0">
-      <tspan x="240" dy="0">@Observable</tspan>
-      <animate attributeName="opacity" values="0;0;0.75;0.75;0" keyTimes="0;0.05;0.2;0.75;1" dur="10s" begin="2s"  repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate" values="0,115; 0,115; 0,100; 0,80; 0,80" keyTimes="0;0.05;0.2;0.75;1" dur="10s" begin="2s" repeatCount="indefinite"/>
-    </text>
-
-    <!-- Floating code: func main() {} -->
-    <text font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#3fb950" filter="url(#glow)" opacity="0">
-      <tspan x="430" dy="0">func main() {}</tspan>
-      <animate attributeName="opacity" values="0;0;0.75;0.75;0" keyTimes="0;0.05;0.2;0.75;1" dur="10s" begin="1s"  repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate" values="0,55; 0,55; 0,70; 0,90; 0,90" keyTimes="0;0.05;0.2;0.75;1" dur="10s" begin="1s" repeatCount="indefinite"/>
-    </text>
-
-    <!-- Floating code: goroutine -->
-    <text font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#39d353" filter="url(#glow)" opacity="0">
-      <tspan x="640" dy="0">go routine()</tspan>
-      <animate attributeName="opacity" values="0;0;0.75;0.75;0" keyTimes="0;0.05;0.2;0.75;1" dur="10s" begin="3.5s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate" values="0,100; 0,100; 0,85; 0,65; 0,65" keyTimes="0;0.05;0.2;0.75;1" dur="10s" begin="3.5s" repeatCount="indefinite"/>
-    </text>
-
-    <!-- Floating code: struct Model -->
-    <text font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#f0883e" filter="url(#glow)" opacity="0">
-      <tspan x="760" dy="0">struct Model</tspan>
-      <animate attributeName="opacity" values="0;0;0.75;0.75;0" keyTimes="0;0.05;0.2;0.75;1" dur="10s" begin="5s"  repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate" values="0,50; 0,50; 0,65; 0,85; 0,85" keyTimes="0;0.05;0.2;0.75;1" dur="10s" begin="5s" repeatCount="indefinite"/>
-    </text>
-
-    <!-- Bottom gradient line -->
     <rect x="0" y="157" width="900" height="2" fill="url(#lineGrad)"/>
   </g>
 </svg>
