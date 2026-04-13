@@ -55,12 +55,6 @@ Telegram-бот, который автоматически подаёт заяв
 
 ---
 
-## 📊 GitHub Stats
-
-![Anton's GitHub stats](https://github-readme-stats.vercel.app/api?username=ayeresell&show_icons=true&theme=dark&hide_border=true&locale=ru)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ayeresell&layout=compact&theme=dark&hide_border=true)
-
----
 
 <details>
 <summary>🇬🇧 English version</summary>
