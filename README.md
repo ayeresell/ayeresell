@@ -47,7 +47,7 @@ High-performance URL mutation checker with goroutine-based concurrency, atomic c
 `Go` `goroutines` `sync/atomic`
 
 ### [restaurant-landing](https://github.com/ayeresell/restaurant-landing) — cinematic landing page
-Immersive restaurant landing page with custom cursor, preloader, scroll animations and full component architecture.
+Immersive restaurant landing page with custom cursor, preloader, scroll animations and full component architecture. [→ Live demo](https://app-eta-seven-61.vercel.app)
 `React` `TypeScript` `Tailwind CSS` `Vite`
 
 ### [quantum-experiments](https://github.com/ayeresell/quantum-experiments) — quantum computing
