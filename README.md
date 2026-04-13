@@ -3,9 +3,6 @@
   <img src="https://img.shields.io/badge/Backend-Go%20%7C%20Python-00ADD8?style=flat&logo=go&logoColor=white" />
 </p>
 
-<h1 align="center">Привет, я Антон 👋</h1>
-
----
 
 ## 🛠 Стек
 
