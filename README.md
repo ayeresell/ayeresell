@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="banner.svg" width="900"/>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/iOS%20%2F%20macOS-разработка-F05138?style=flat&logo=apple&logoColor=white" />
   <img src="https://img.shields.io/badge/Backend-Go%20%7C%20Python-00ADD8?style=flat&logo=go&logoColor=white" />
 </p>
