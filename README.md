@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2f81f7,100:3fb950&height=160&section=header" width="900"/>
+  <img src="https://app-eta-seven-61.vercel.app/banner.svg" width="900"/>
 </p>
 
 <p align="center">
