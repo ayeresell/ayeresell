@@ -25,12 +25,12 @@
 
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white)
-![Claude API](https://img.shields.io/badge/Claude_API-CC785C?style=flat)
 
 **Инструменты**
 
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![Telegram Bot API](https://img.shields.io/badge/Telegram_Bot_API-26A5E4?style=flat&logo=telegram&logoColor=white)
 
 ---
@@ -39,7 +39,7 @@
 
 ### [FocusGuard](https://github.com/ayeresell/FocusGuard) — трекер продуктивности для macOS
 Приложение в строке меню, которое отслеживает активные окна и использует ИИ для классификации сессий в реальном времени.
-`Swift` `SwiftUI` `SwiftData` `Claude API` `Accessibility API`
+`Swift` `SwiftUI` `SwiftData` `Accessibility API`
 
 ### [torgi-bot](https://github.com/ayeresell/torgi-bot) — бот для автоматизации заявок
 Telegram-бот, который автоматически подаёт заявки на портале uslugi.mosreg.ru через авторизацию Госуслуг и headless-браузер.
@@ -67,11 +67,12 @@ Telegram-бот, который автоматически подаёт заяв
 
 **Mobile & Desktop:** Swift, SwiftUI, Xcode  
 **Backend:** Python, Go  
-**Data & AI:** Pandas, NumPy, Claude API  
+**Data & AI:** Pandas, NumPy  
+**Tools:** Docker  
 
 ### Projects
 
-- **[FocusGuard](https://github.com/ayeresell/FocusGuard)** — macOS menu bar app that tracks activity and uses AI to categorize focus sessions. `Swift` `SwiftUI` `Claude API`
+- **[FocusGuard](https://github.com/ayeresell/FocusGuard)** — macOS menu bar app that tracks activity and uses AI to categorize focus sessions. `Swift` `SwiftUI`
 - **[torgi-bot](https://github.com/ayeresell/torgi-bot)** — Telegram bot automating government portal submissions via Gosuslugi auth. `TypeScript` `Playwright`
 - **[url-checker](https://github.com/ayeresell/url-checker)** — concurrent URL checker with goroutine worker pool. `Go`
 - **[restaurant-landing](https://github.com/ayeresell/restaurant-landing)** — cinematic restaurant landing page. [→ Live demo](https://app-eta-seven-61.vercel.app) `React` `TypeScript` `Tailwind`
