@@ -59,10 +59,6 @@ Telegram-бот, который автоматически подаёт заяв
 <details>
 <summary>🇬🇧 English version</summary>
 
-## Hey, I'm Anton 👋
-
-iOS & backend developer based in Moscow. I build mobile apps, automation tools, and bots. Currently finishing my degree in Robotics & Mechatronics at MGTU Stankin.
-
 ### Tech Stack
 
 **Mobile & Desktop:** Swift, SwiftUI, Xcode  
