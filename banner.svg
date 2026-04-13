@@ -3,13 +3,6 @@
     <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="1" fill="#21262d"/>
     </pattern>
-    <filter id="orbBlur">
-      <feGaussianBlur stdDeviation="22"/>
-    </filter>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2.5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
     <clipPath id="clip">
       <rect width="900" height="160" rx="12"/>
     </clipPath>
@@ -19,56 +12,40 @@
       <stop offset="75%"  stop-color="#3fb950"/>
       <stop offset="100%" stop-color="#3fb950" stop-opacity="0"/>
     </linearGradient>
+    <radialGradient id="o1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2f81f7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#2f81f7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="o2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f0883e" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#f0883e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="o3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3fb950" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#3fb950" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
   <style>
-    .orb1 { animation: drift1 9s ease-in-out infinite; transform-origin: 140px 75px; }
-    .orb2 { animation: drift2 11s ease-in-out infinite; transform-origin: 490px 35px; }
-    .orb3 { animation: drift3 10s ease-in-out infinite; transform-origin: 790px 105px; }
+    .orb1 { animation: pulse 8s ease-in-out infinite; }
+    .orb2 { animation: pulse 11s ease-in-out infinite 1.5s; }
+    .orb3 { animation: pulse 9s ease-in-out infinite 3s; }
 
-    @keyframes drift1 {
-      0%,100% { transform: translate(0,0); }
-      50%     { transform: translate(22px,-20px); }
-    }
-    @keyframes drift2 {
-      0%,100% { transform: translate(0,0); }
-      50%     { transform: translate(-24px,36px); }
-    }
-    @keyframes drift3 {
-      0%,100% { transform: translate(0,0); }
-      50%     { transform: translate(-34px,-36px); }
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50%     { opacity: 0.4; }
     }
 
-    .c1 { animation: f1 10s ease-in-out infinite; }
-    .c2 { animation: f2 10s ease-in-out infinite 2s; }
-    .c3 { animation: f3 10s ease-in-out infinite 1s; }
-    .c4 { animation: f4 10s ease-in-out infinite 3.5s; }
-    .c5 { animation: f5 10s ease-in-out infinite 5s; }
+    .c1 { animation: fade 10s ease-in-out infinite 0s; }
+    .c2 { animation: fade 10s ease-in-out infinite 2s; }
+    .c3 { animation: fade 10s ease-in-out infinite 4s; }
+    .c4 { animation: fade 10s ease-in-out infinite 6s; }
+    .c5 { animation: fade 10s ease-in-out infinite 8s; }
 
-    @keyframes f1 {
-      0%,8%   { opacity:0; transform:translateY(0); }
-      20%,70% { opacity:.75; transform:translateY(-16px); }
-      90%,100%{ opacity:0; transform:translateY(-30px); }
-    }
-    @keyframes f2 {
-      0%,8%   { opacity:0; transform:translateY(0); }
-      20%,70% { opacity:.75; transform:translateY(-16px); }
-      90%,100%{ opacity:0; transform:translateY(-30px); }
-    }
-    @keyframes f3 {
-      0%,8%   { opacity:0; transform:translateY(0); }
-      20%,70% { opacity:.75; transform:translateY(16px); }
-      90%,100%{ opacity:0; transform:translateY(30px); }
-    }
-    @keyframes f4 {
-      0%,8%   { opacity:0; transform:translateY(0); }
-      20%,70% { opacity:.75; transform:translateY(-16px); }
-      90%,100%{ opacity:0; transform:translateY(-30px); }
-    }
-    @keyframes f5 {
-      0%,8%   { opacity:0; transform:translateY(0); }
-      20%,70% { opacity:.75; transform:translateY(16px); }
-      90%,100%{ opacity:0; transform:translateY(30px); }
+    @keyframes fade {
+      0%,10%  { opacity: 0; }
+      25%,65% { opacity: 0.7; }
+      80%,100%{ opacity: 0; }
     }
   </style>
 
@@ -76,15 +53,17 @@
     <rect width="900" height="160" fill="#0d1117"/>
     <rect width="900" height="160" fill="url(#dots)" opacity="0.6"/>
 
-    <circle class="orb1" cx="140" cy="75"  r="110" fill="#2f81f7" opacity="0.13" filter="url(#orbBlur)"/>
-    <circle class="orb2" cx="490" cy="35"  r="90"  fill="#f0883e" opacity="0.11" filter="url(#orbBlur)"/>
-    <circle class="orb3" cx="790" cy="105" r="100" fill="#3fb950" opacity="0.12" filter="url(#orbBlur)"/>
+    <!-- Static orbs via radial gradients, only opacity animated -->
+    <rect class="orb1" x="0"   y="0" width="320" height="160" fill="url(#o1)"/>
+    <rect class="orb2" x="290" y="0" width="320" height="160" fill="url(#o2)"/>
+    <rect class="orb3" x="580" y="0" width="320" height="160" fill="url(#o3)"/>
 
-    <text class="c1" x="60"  y="95"  font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#58a6ff"  filter="url(#glow)" opacity="0">import SwiftUI</text>
-    <text class="c2" x="240" y="115" font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#d2a8ff"  filter="url(#glow)" opacity="0">@Observable</text>
-    <text class="c3" x="430" y="55"  font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#3fb950"  filter="url(#glow)" opacity="0">func main() {}</text>
-    <text class="c4" x="640" y="100" font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#39d353"  filter="url(#glow)" opacity="0">go routine()</text>
-    <text class="c5" x="760" y="50"  font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#f0883e"  filter="url(#glow)" opacity="0">struct Model</text>
+    <!-- Floating code — opacity only, no transform -->
+    <text class="c1" x="60"  y="88"  font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#58a6ff" opacity="0">import SwiftUI</text>
+    <text class="c2" x="240" y="108" font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#d2a8ff" opacity="0">@Observable</text>
+    <text class="c3" x="420" y="68"  font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#3fb950" opacity="0">func main() {}</text>
+    <text class="c4" x="620" y="95"  font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#39d353" opacity="0">go routine()</text>
+    <text class="c5" x="755" y="55"  font-family="'SF Mono',ui-monospace,monospace" font-size="13" fill="#f0883e" opacity="0">struct Model</text>
 
     <rect x="0" y="157" width="900" height="2" fill="url(#lineGrad)"/>
   </g>
