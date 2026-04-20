@@ -41,6 +41,10 @@
 Приложение в строке меню, которое отслеживает активные окна и использует ИИ для классификации сессий в реальном времени.
 `Swift` `SwiftUI` `SwiftData` `Accessibility API`
 
+### [KnockMac](https://github.com/ayeresell/KnockMac) — скриншот по стуку по корпусу Mac
+Приложение в строке меню, которое делает скриншот по двойному стуку: читает сырой IMU акселерометра Apple Silicon через IOKit HID и детектирует стук системой голосования из 5 алгоритмов.
+`Swift` `SwiftUI` `IOKit HID` `ScreenCaptureKit`
+
 ### [torgi-bot](https://github.com/ayeresell/torgi-bot) — бот для автоматизации заявок
 Telegram-бот, который автоматически подаёт заявки на портале uslugi.mosreg.ru через авторизацию Госуслуг и headless-браузер.
 `TypeScript` `Node.js` `Playwright` `Telegraf`
@@ -73,6 +77,7 @@ Telegram-бот, который автоматически подаёт заяв
 ### Projects
 
 - **[FocusGuard](https://github.com/ayeresell/FocusGuard)** — macOS menu bar app that tracks activity and uses AI to categorize focus sessions. `Swift` `SwiftUI`
+- **[KnockMac](https://github.com/ayeresell/KnockMac)** — macOS menu bar app that takes a screenshot when you double-knock the laptop body. Reads raw IMU via IOKit HID, detects knocks with a 5-algorithm voting system. `Swift` `SwiftUI` `IOKit HID` `ScreenCaptureKit`
 - **[torgi-bot](https://github.com/ayeresell/torgi-bot)** — Telegram bot automating government portal submissions via Gosuslugi auth. `TypeScript` `Playwright`
 - **[url-checker](https://github.com/ayeresell/url-checker)** — concurrent URL checker with goroutine worker pool. `Go`
 - **[restaurant-landing](https://github.com/ayeresell/restaurant-landing)** — cinematic restaurant landing page. [→ Live demo](https://app-eta-seven-61.vercel.app) `React` `TypeScript` `Tailwind`
